@@ -24,8 +24,17 @@
   <main class="h-10" id="global_app">
     <div class="container mx-auto px-4">
         <form action="">
-            <custom-select></custom-select>
+            <custom-select :label="'Выберите дом'" :list="['Дом 1','Дом 3', 'Дом 2']" ></custom-select>
+            <custom-select :label="'Количество комнат'" :list="['1','2', '3']" ></custom-select>
         </form>
+
+        <div class="flex flex-wrap">
+            <div class="w-1/2 border border-solid border-cborder h-5 rounded-lg">
+            </div>
+
+            <div class="w-1/2 border border-solid border-cborder h-5 rounded-lg">
+            </div>
+        </div>
     </div>
 
   </main>

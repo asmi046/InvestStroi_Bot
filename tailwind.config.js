@@ -12,7 +12,9 @@ module.exports = {
     extend: {
       colors: {
         'sred': '#C10010',
-        'sblue': '#003C8C'
+        'sblue': '#003C8C',
+        'cborder': '#A0A0A0',
+        'cfill': '#F2F2F2'
       },
 
       fontFamily: {
