@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,4 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/', [IndexController::class, "show"])->name('home');
+Route::get('/home', [HomeController::class, "show"])->name('kvartira');

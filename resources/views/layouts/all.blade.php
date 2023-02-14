@@ -40,6 +40,7 @@
         @yield('content')
     </div>
 
+    <x-bottom-menu></x-bottom-menu>
 
     @vite([
         'resources/js/app.js',
