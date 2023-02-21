@@ -38,16 +38,18 @@ class KvartiraSeeder extends Seeder
                 if ($data[1] == 'E2') $type = "2 комнаты (Евро)";
                 if ($data[1] == 'E3') $type = "3 комнаты (Евро)";
 
+                Storage::disk('public')->put($data[0].".svg", file_get_contents(public_path('planes/'.$data[0].'.svg')), 'public');
 
                 $main_data[] =
                     [
                         'type' => $type,
                         'number' => floatval($data[0]),
+                        'price' => floatval('1980000'),
                         'area' => floatval($data[2]),
                         'area_live' => floatval($data[3]),
                         'flor' => intval($data[5]),
                         'rooms' => intval($data[4]),
-                        'plan_img' => "",
+                        'plan_img' => Storage::url($data[0].".svg"),
                         'home_1_img' => Storage::url("home_v_1.jpg"),
                         'home_2_img' => Storage::url("home_v_2.jpg"),
                         'koridor_img' => "",

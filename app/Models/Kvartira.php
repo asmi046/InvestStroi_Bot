@@ -12,6 +12,7 @@ class Kvartira extends Model
     public $fillable = [
         'type',
         'number',
+        'price',
         'area',
         'area_live',
         'flor',
@@ -24,7 +25,7 @@ class Kvartira extends Model
     ];
 
     public function home_info() {
-        return $this->hasOne(Home::class);
+        return $this->hasOne(Home::class, 'id', 'home_id');
     }
 
 }

@@ -1,8 +1,8 @@
 @extends('layouts.all')
 
 @php
-    $title = "Главная";
-    $description = "Выберите необходимые параметры Вашей будущей квартиры";
+    $title = $info->type." ".$info->area."м²";
+    $description = "Купить квартиру: ".$title." в доме ".$info->home_info->addres;
 @endphp
 
 @section('title', $title)
@@ -13,9 +13,9 @@
         <div class="w-full h-full bg-black bg-opacity-50 absolute left-0 top-0 z-10"></div>
         <div class="container mx-auto px-4 py-4 flex justify-between">
             <div class="logo m-auto ml-0 flex flex-col z-20">
-                <h1 class="">3 комнаты 79м²</h1>
-                <p class="font-normal font-sans">ул. Косухина д. 33</p>
-                <p class="font-normal font-sans">7 этаж</p>
+                <h1 class="">{{$info->type}} {{$info->area}}м²</h1>
+                <p class="font-normal font-sans">{{$info->home_info->addres}}</p>
+                <p class="font-normal font-sans">{{$info->flor}} этаж</p>
             </div>
 
             <a class="menu bg-white w-9 h-9 rounded-full my-auto bg-no-repeat bg-center z-20" style="background-image:url({{asset('img/logo-blue.svg')}})" href="#"></a>
@@ -31,9 +31,9 @@
                 :pagination="true"
                 :modules="modules"
             >
-                <swiper-slide class="rounded-xl overflow-hidden"><img src="{{asset('img/slide_img.jpg')}}" alt=""></swiper-slide>
-                <swiper-slide class="rounded-xl overflow-hidden"><img src="{{asset('img/slide_img.jpg')}}" alt=""></swiper-slide>
-                <swiper-slide class="rounded-xl overflow-hidden"><img src="{{asset('img/slide_img.jpg')}}" alt=""></swiper-slide>
+                <swiper-slide class="rounded-xl overflow-hidden max-h-[250px]"><img class="h-72 w-full object-contain" src="{{$info->plan_img}}" alt=""></swiper-slide>
+                <swiper-slide class="rounded-xl overflow-hidden max-h-[250px]"><img class="h-72 w-full object-contain" src="{{$info->home_1_img}}" alt=""></swiper-slide>
+                <swiper-slide class="rounded-xl overflow-hidden max-h-[250px]"><img class="h-72 w-full object-contain" src="{{$info->home_2_img}}" alt=""></swiper-slide>
             </swiper>
 
             <div class="w-full bg-cfill rounded-xl p-3 my-3 flex flex-col">

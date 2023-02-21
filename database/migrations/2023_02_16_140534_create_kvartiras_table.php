@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('type')->comment('Тип квартиры');
             $table->integer('number')->comment('Номер квартиры');
+            $table->float('price', 9, 2)->comment('Цена квартиры');
             $table->float('area')->comment('Площадь квартиры');
             $table->float('area_live')->comment('Площадь квартиры жилая');
             $table->integer('flor')->comment('Этаж');

@@ -29,8 +29,11 @@
                     <custom-select :selected="'{{request()->input('home')}}'" :label="'Выберите дом'" :list='@json($all_home->toArray())' :field="'addres'" :name="'home'"></custom-select>
                     <custom-select :selected="'{{request()->input('kvartira')}}'" :label="'Количество комнат'" :list='@json($kvtype->toArray())' :field="'type'" :name="'kvartira'"></custom-select>
                 </div>
+                <div class="flex flex-col ml-2">
+                    <button class="bg-sred text-white px-3 py-1 rounded-md min-h-[40px] mb-3" type="submit">Выбрать</button>
+                    <a href="{{route('home')}}" class="bg-sblue text-white px-3 py-1 rounded-md min-h-[40px] text-center leading-[32px]" type="submit">Сброс</a>
+                </div>
 
-                <button type="submit">выбрать</button>
             </form>
 
             <div class="flex flex-wrap justify-between">

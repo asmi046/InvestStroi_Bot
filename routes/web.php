@@ -17,4 +17,4 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [IndexController::class, "show"])->name('home');
-Route::get('/home', [HomeController::class, "show"])->name('kvartira');
+Route::get('/home/{id}', [HomeController::class, "show"])->name('kvartira');
