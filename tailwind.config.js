@@ -9,6 +9,15 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
+    screens: {
+        'ssm': '370px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+    },
+
     extend: {
         backgroundImage: {
             'lbg':'url(/public/img/icons/like.svg)',
@@ -52,7 +61,7 @@ module.exports = {
       addBase({
         'body': { backgroundColor: theme('white'), fontFamily:"'Roboto'" },
         'h2': {fontWeight:'600', fontSize:"18px", padding:"1em 0", fontFamily:"'Exo 2'"},
-        'p': {fontSize:"14px"},
+        'p': {fontSize:"12px"},
         '.borderShadow' : {boxShadow: "0px 0px 9px rgba(0, 0, 0, 0.25)"}
 
       })

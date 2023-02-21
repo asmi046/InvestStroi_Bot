@@ -24,15 +24,21 @@
 
     <main class="h-auto mb-20" id="global_app">
         <div class="container mx-auto px-4">
-            <form action="">
-                <custom-select :label="'Выберите дом'" :list="['Дом 1','Дом 3', 'Дом 2']" ></custom-select>
-                <custom-select :label="'Количество комнат'" :list="['1','2', '3']" ></custom-select>
+            <form class="flex flex-wrap"  action="">
+                <div class="flex-1">
+                    <custom-select :selected="'{{request()->input('home')}}'" :label="'Выберите дом'" :list='@json($all_home->toArray())' :field="'addres'" :name="'home'"></custom-select>
+                    <custom-select :selected="'{{request()->input('kvartira')}}'" :label="'Количество комнат'" :list='@json($kvtype->toArray())' :field="'type'" :name="'kvartira'"></custom-select>
+                </div>
+
+                <button type="submit">выбрать</button>
             </form>
 
             <div class="flex flex-wrap justify-between">
-                @for ($i =0; $i<12; $i++)
-                    <x-home-card></x-home-card>
-                @endfor
+                @foreach ($kvartirs as $item)
+                    <x-home-card :item="$item" :home="$selecthome"></x-home-card>
+                @endforeach
+
+
             </div>
         </div>
   </main>

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Home extends Model
 {
     use HasFactory;
+
+    public $fillable = [
+        'title',
+        'addres',
+        'flors',
+    ];
+
+    public function home_kvartirs() {
+        return $this->hasMany(Kvartira::class);
+    }
 }

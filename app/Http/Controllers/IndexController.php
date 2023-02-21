@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Home;
+
 class IndexController extends Controller
 {
-    public function show() {
+    public function show(Request $request) {
+        $home_name = empty($request->input('home'))?"%":$request->input('home');
+        $kv_type = empty($request->input('kvartira'))?"%":$request->input('kvartira');
+        $selectHome = Home::where('addres', "LIKE", $home_name)->first();
+        $kvartirs = $selectHome->home_kvartirs()->where('type', "LIKE", $kv_type)->get();
 
-        return view('index');
+        $all_home = Home::all();
+        $KvType = $selectHome->home_kvartirs()->select('type')->groupBy('type')->get();
+
+        return view('index', ['all_home' => $all_home, 'selecthome' => $selectHome, "kvartirs" => $kvartirs, 'kvtype' => $KvType]);
     }
 }
