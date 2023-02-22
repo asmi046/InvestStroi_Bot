@@ -31,9 +31,9 @@
                 :pagination="true"
                 :modules="modules"
             >
-                <swiper-slide class="rounded-xl overflow-hidden max-h-[250px]"><img class="h-72 w-full object-contain" src="{{$info->plan_img}}" alt=""></swiper-slide>
-                <swiper-slide class="rounded-xl overflow-hidden max-h-[250px]"><img class="h-72 w-full object-contain" src="{{$info->home_1_img}}" alt=""></swiper-slide>
-                <swiper-slide class="rounded-xl overflow-hidden max-h-[250px]"><img class="h-72 w-full object-contain" src="{{$info->home_2_img}}" alt=""></swiper-slide>
+                <swiper-slide class="rounded-xl overflow-hidden"><img class="h-72 w-full object-contain sm:h-[500px]" src="{{$info->plan_img}}" alt=""></swiper-slide>
+                <swiper-slide class="rounded-xl overflow-hidden"><img class="h-72 w-full object-contain sm:h-[500px]" src="{{$info->home_1_img}}" alt=""></swiper-slide>
+                <swiper-slide class="rounded-xl overflow-hidden"><img class="h-72 w-full object-contain sm:h-[500px]" src="{{$info->home_2_img}}" alt=""></swiper-slide>
             </swiper>
 
             <div class="w-full bg-cfill rounded-xl p-3 my-3 flex flex-col">
