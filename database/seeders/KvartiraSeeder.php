@@ -38,17 +38,23 @@ class KvartiraSeeder extends Seeder
                 if ($data[1] == 'E2') $type = "2 комнаты (Евро)";
                 if ($data[1] == 'E3') $type = "3 комнаты (Евро)";
 
+                $rooms = $data[4];
+                if ($rooms == 'С') $rooms = 1;
+
                 Storage::disk('public')->put($data[0].".svg", file_get_contents(public_path('planes/'.$data[0].'.svg')), 'public');
 
                 $main_data[] =
                     [
                         'type' => $type,
                         'number' => floatval($data[0]),
-                        'price' => floatval('1980000'),
+                        'price' => floatval($data[6]),
+                        'price_metr' => floatval($data[7]),
+                        'view' => iconv("windows-1251", "utf-8", $data[8]),
+                        'podezd' => iconv("windows-1251", "utf-8", $data[9]),
                         'area' => floatval($data[2]),
                         'area_live' => floatval($data[3]),
                         'flor' => intval($data[5]),
-                        'rooms' => intval($data[4]),
+                        'rooms' => intval($rooms),
                         'plan_img' => Storage::url($data[0].".svg"),
                         'home_1_img' => Storage::url("home_v_1.jpg"),
                         'home_2_img' => Storage::url("home_v_2.jpg"),
@@ -59,6 +65,7 @@ class KvartiraSeeder extends Seeder
 
             }
 
+            // var_dump($main_data);
             DB::table("kvartiras")->insert($main_data);
         }
     }
