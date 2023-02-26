@@ -44,6 +44,7 @@
 
     @vite([
         'resources/js/app.js',
+        'public/js/favorites.js',
     ])
 </body>
 

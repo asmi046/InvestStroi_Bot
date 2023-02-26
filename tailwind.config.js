@@ -22,6 +22,7 @@ module.exports = {
         backgroundImage: {
             'lbg':'url(/public/img/icons/like.svg)',
             'lbg_h':'url(/public/img/icons/like_hover.svg)',
+            'lbg_active':'url(/public/img/icons/like_hover.svg)',
 
             'shreBg': 'url(/public/img/icons/share.svg)',
             'shreBg_h': 'url(/public/img/icons/share_hover.svg)',
