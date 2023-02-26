@@ -38,11 +38,11 @@
 
             <div class="w-full bg-cfill rounded-xl p-3 my-3 flex flex-col">
                 <div class="w-full flex font-header">
-                    <span class="text-sred text-xl font-header font-bold mr-3">5 450 0000 ₽</span>
-                    <span class="text-cborder mt-auto line-through">6 850 0000 ₽</span>
+                    <span class="text-sred text-xl font-header font-bold mr-3">{{ number_format($info->price, 2, ".", " ") }} ₽</span>
+                    <span class="text-cborder mt-auto line-through">{{ number_format((float)($info->price*1.15), 2, ".", " ") }} ₽</span>
                 </div>
                 <div class="w-full text-sm">
-                    58 000 за м²
+                    {{ number_format($info->price_metr, 2, ".", " ") }} за м²
                 </div>
             </div>
 
@@ -51,27 +51,22 @@
                         <div class="w-11/12">
                             <h2 class="pt-0">Семейная ипотека</h2>
                         </div>
-                        <div class="w-1/12">
-                            <span class=" block bg-sred w-5 h-5 rounded-sm"></span>
+                        <div class="w-1/12 flex">
+                            <span class=" block bg-sred w-5 h-5 rounded-sm mr-0 ml-auto"></span>
                         </div>
                     </div>
             </div>
 
-            <div class="w-full py-4 bg-cfill rounded-xl p-3 my-3 flex flex-col">
-                <div class="w-full border-b border-b-cborder flex justify-between">
-                    <h3 class="font-header">Адрес</h3>
-                    <span>ул. Косухина д. 33</span>
-                </div>
-
-                <div class="w-full border-b border-b-cborder flex justify-between">
-                    <h3 class="font-header">Этаж</h3>
-                    <span>7 из 9</span>
-                </div>
-
-                <div class="w-full border-b border-b-cborder flex justify-between">
-                    <h3 class="font-header">Заселение</h3>
-                    <span>4 квартал 2023</span>
-                </div>
+            <div class="w-full py-4 bg-cfill rounded-xl px-5 my-3 flex flex-col">
+                <x-param-blk :name="'Тип '" :value="$info->type"></x-param-blk>
+                <x-param-blk :name="'Номер квартиры'" :value="$info->number"></x-param-blk>
+                <x-param-blk :name="'Площадь (общая)'" :value="$info->area"></x-param-blk>
+                <x-param-blk :name="'Площадь (жилая)'" :value="$info->area_live"></x-param-blk>
+                <x-param-blk :name="'Этаж'" :value="$info->flor.' из '.$info->home_info->flors"></x-param-blk>
+                <x-param-blk :name="'Количество комнат'" :value="$info->rooms"></x-param-blk>
+                <x-param-blk :name="'Вид из окна'" :value="$info->view"></x-param-blk>
+                <x-param-blk :name="'Подезд'" :value="$info->podezd"></x-param-blk>
+                <x-param-blk :name="'Заселение'" :value="'3 квартал 2024'"></x-param-blk>
 
             </div>
         </div>

@@ -47,8 +47,8 @@ class KvartiraSeeder extends Seeder
                     [
                         'type' => $type,
                         'number' => floatval($data[0]),
-                        'price' => floatval($data[6]),
-                        'price_metr' => floatval($data[7]),
+                        'price' => floatval(str_replace(" ", "",trim($data[6]))),
+                        'price_metr' => floatval(str_replace(" ", "",trim($data[7]))),
                         'view' => iconv("windows-1251", "utf-8", $data[8]),
                         'podezd' => iconv("windows-1251", "utf-8", $data[9]),
                         'area' => floatval($data[2]),
