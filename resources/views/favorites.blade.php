@@ -23,7 +23,13 @@
     </header>
 
     <main class="h-auto mb-20" id="global_app">
-
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                @foreach ($products as $item)
+                    <x-home-card :item="$item->tovar_data" :home="$item->tovar_data->home_info"></x-home-card>
+                @endforeach
+            </div>
+        </div>
     </main>
 
 

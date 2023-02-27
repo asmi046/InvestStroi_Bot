@@ -19,6 +19,7 @@ class FavoriteController extends Controller
 
     public function index() {
         $fav_product = Favorite::with('tovar_data')->where("favorites.session_id", session()->getId())->get();
+        // dd($fav_product);
         return view('favorites', ["products" => $fav_product]);
     }
 
