@@ -16,6 +16,7 @@ import 'swiper/css/pagination';
 import CustomSelect from './components/CustomSelect.vue'
 import LikeElement from './components/LikeElement.vue'
 import LikeCounter from './components/LikeCounter.vue'
+import ModalWindow from './components/ModalWindow.vue'
 
 
 const store = new createStore({
@@ -57,6 +58,7 @@ const global_app = createApp({
         CustomSelect,
         LikeElement,
         LikeCounter,
+        ModalWindow,
         Swiper,
         SwiperSlide,
 

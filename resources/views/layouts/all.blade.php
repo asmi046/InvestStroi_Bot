@@ -37,6 +37,8 @@
 <body>
 
 	<div class="wrapper" id="global_app">
+        <modal-window rout="/send_consult" redirect="/thencs" hesh="showModal" title="Помощь риэлтора" subtitle="Мы свяжемся с Вами в течении 15 минут"></modal-window>
+
         @yield('content')
         <x-bottom-menu></x-bottom-menu>
     </div>

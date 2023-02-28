@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div v-show="openList" class="w-full px-5 py-1 rounded-lg text-cborder bg-cfill flex flex-col absolute left-0 top-11 z-50">
+        <div v-show="openList" class="w-full px-5 py-1 rounded-lg border border-cborder text-cborder bg-cfill flex flex-col absolute left-0 top-11 z-50">
             <div @click.prevent="selectItem(item[field])" v-for="(item, index) in list" :key="index" class="w-full pl-0 pr-0 pt-1 pb-1 border-b borde-cborder cursor-pointer hover:font-semibold">{{item[field]}}</div>
         </div>
     </div>
