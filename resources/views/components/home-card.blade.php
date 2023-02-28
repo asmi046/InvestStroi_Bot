@@ -9,6 +9,6 @@
     <div class="w-full flex flex-wrap pt-2 mt-auto">
         <a  class="bg-sred text-white text-center px-5 py-2 rounded-lg text-xs ssm:text-xs xl:text-sm"  href="{{route('kvartira', $item->id)}}">Подробнее</a>
         {{-- <a data-prodid="{{$item->id}}" class="to_favorites w-8 h-8 my-auto ml-auto bg-lbg hover:bg-lbg_h" href=""></a> --}}
-        <like-element :elemid="{{$item->id}}" :liked="false" ></like-element>
+        <like-element :elemid="{{$item->id}}" :liked="{{$infavorites}}" ></like-element>
     </div>
 </div>

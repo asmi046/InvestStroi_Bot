@@ -38,9 +38,10 @@
 
 	<div class="wrapper" id="global_app">
         @yield('content')
+        <x-bottom-menu></x-bottom-menu>
     </div>
 
-    <x-bottom-menu></x-bottom-menu>
+
 
     @vite([
         'resources/js/app.js',

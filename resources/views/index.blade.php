@@ -38,7 +38,11 @@
 
             <div class="flex flex-wrap justify-between">
                 @foreach ($kvartirs as $item)
-                    <x-home-card :item="$item" :home="$selecthome"></x-home-card>
+                @php
+                    $fav = ($favorites->contains("product_sku", $item->id))?1:0;
+                @endphp
+
+                    <x-home-card :item="$item" :home="$selecthome" :infavorites="$fav"></x-home-card>
                 @endforeach
 
 

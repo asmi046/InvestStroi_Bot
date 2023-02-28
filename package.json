@@ -3,7 +3,6 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-
         "clone_rep": "ssh u0829746@31.31.196.162 \"git clone https://github.com/asmi046/InvestStroi_bot www/kvartira-bot.ru\"",
         "composer_remove": "ssh u0829746@31.31.196.162 \"cd www/kvartira-bot.ru && /opt/php/8.1/bin/php composer.phar dumpauto\"",
         "composer_install": "ssh u0829746@31.31.196.162 \"cd www/kvartira-bot.ru && /opt/php/8.1/bin/php composer.phar install\"",
@@ -29,7 +28,6 @@
         "optimize": "ssh u0829746@31.31.196.162 \"cd www/kvartira-bot.ru && /opt/php/8.1/bin/php artisan optimize\"",
         "optimize_all": "npm run optimize && npm run cache_clear && npm run cache_view && npm run cache_route && npm run cache_config",
         "orchid_user": "ssh u0829746@31.31.196.162 \"cd www/kvartira-bot.ru && /opt/php/8.1/bin/php artisan orchid:admin admin asmi046@gmail.com 123\""
-
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",
@@ -44,6 +42,7 @@
         "@vitejs/plugin-vue": "^4.0.0",
         "swiper": "^9.0.5",
         "vue": "^3.2.47",
-        "vue-axios": "^3.5.2"
+        "vue-axios": "^3.5.2",
+        "vuex": "^4.1.0"
     }
 }
