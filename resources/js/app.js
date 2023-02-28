@@ -12,12 +12,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import CustomSelect from './components/CustomSelect.vue'
+import LikeElement from './components/LikeElement.vue'
 
 const global_app = createApp({
     components:{
         CustomSelect,
+        LikeElement,
         Swiper,
         SwiperSlide,
+
     },
 
     setup() {
