@@ -24,6 +24,9 @@ module.exports = {
             'lbg_h':'url(/public/img/icons/like_hover.svg)',
             'lbg_active':'url(/public/img/icons/like_hover.svg)',
 
+            'chek':'url(/public/img/icons/check_icon.svg)',
+            'chek_hover':'url(/public/img/icons/check_icon_white.svg)',
+
             'shreBg': 'url(/public/img/icons/share.svg)',
             'shreBg_h': 'url(/public/img/icons/share_hover.svg)',
 

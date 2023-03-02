@@ -17,6 +17,7 @@ import CustomSelect from './components/CustomSelect.vue'
 import LikeElement from './components/LikeElement.vue'
 import LikeCounter from './components/LikeCounter.vue'
 import ModalWindow from './components/ModalWindow.vue'
+import CalcBlk from './components/CalcBlk.vue'
 
 
 const store = new createStore({
@@ -59,6 +60,7 @@ const global_app = createApp({
         LikeElement,
         LikeCounter,
         ModalWindow,
+        CalcBlk,
         Swiper,
         SwiperSlide,
 

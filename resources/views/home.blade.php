@@ -46,16 +46,7 @@
                 </div>
             </div>
 
-            <div class="w-full">
-                    <div class="w-full border border-cfill rounded-xl p-4 flex flex-wrap">
-                        <div class="w-11/12">
-                            <h2 class="pt-0">Семейная ипотека</h2>
-                        </div>
-                        <div class="w-1/12 flex">
-                            <span class=" block bg-sred w-5 h-5 rounded-sm mr-0 ml-auto"></span>
-                        </div>
-                    </div>
-            </div>
+            <calc-blk></calc-blk>
 
             <div class="w-full py-4 bg-cfill rounded-xl px-5 my-3 flex flex-col">
                 <x-param-blk :name="'Тип '" :value="$info->type"></x-param-blk>

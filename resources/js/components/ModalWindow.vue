@@ -109,7 +109,6 @@ export default {
         border-radius: 11px;
         position:relative;
         padding: 40px;
-
     }
 
     .popup__close {
