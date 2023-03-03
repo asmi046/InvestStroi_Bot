@@ -36,6 +36,7 @@ export default {
 
     props: ['rout', 'redirect', 'hesh', 'title', 'subtitle'],
 
+
     methods:{
         closeWin() {
             this.showModal = false

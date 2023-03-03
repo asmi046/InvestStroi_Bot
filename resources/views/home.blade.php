@@ -18,7 +18,7 @@
                 <p class="font-normal font-sans">{{$info->flor}} этаж</p>
             </div>
 
-            <a class="menu bg-white w-9 h-9 rounded-full my-auto bg-no-repeat bg-center z-20" style="background-image:url({{asset('img/logo-blue.svg')}})" href="#"></a>
+            <x-logo></x-logo>
         </div>
 
         <div class="hdecor w-full h-5 bg-white rounded-t-xl z-20"></div>
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <calc-blk></calc-blk>
+            <calc-blk :homeprice="{{$info->price}}" :kvartirainfo="'{{$info->number.', '.$info->type.' '.$info->area.'м²'}}'"></calc-blk>
 
             <div class="w-full py-4 bg-cfill rounded-xl px-5 my-3 flex flex-col">
                 <x-param-blk :name="'Тип '" :value="$info->type"></x-param-blk>

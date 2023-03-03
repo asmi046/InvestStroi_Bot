@@ -16,7 +16,7 @@
                 <h1 class="">Понравившиеся <br/>квартиры</h1>
             </div>
 
-            <a class="menu bg-white w-9 h-9 rounded-full my-auto bg-no-repeat bg-center z-20" style="background-image:url({{asset('img/logo-blue.svg')}})" href="#"></a>
+            <x-logo></x-logo>
         </div>
 
         <div class="hdecor w-full h-5 bg-white rounded-t-xl z-20"></div>

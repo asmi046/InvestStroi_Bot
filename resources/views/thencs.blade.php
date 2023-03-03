@@ -16,7 +16,7 @@
                 <h1 class="">Благодарим <br/>за обращение</h1>
             </div>
 
-            <a class="menu bg-white w-9 h-9 rounded-full my-auto bg-no-repeat bg-center z-20" style="background-image:url({{asset('img/logo-blue.svg')}})" href="#"></a>
+            <x-logo></x-logo>
         </div>
 
         <div class="hdecor w-full h-5 bg-white rounded-t-xl z-20"></div>
@@ -24,7 +24,11 @@
 
     <main class="h-auto mb-20" id="global_app">
         <div class="container mx-auto px-4">
-
+            <div class="flex flex-col">
+                <img class="mx-auto my-4 w-60 h-60" src="{{asset('img/icons/like-to-page.svg')}}" alt="Спасибо за обращение">
+                <h2 class="mx-auto my-2">Спасибо за обращение!</h2>
+                <p class="mx-auto my-1">Мы свяжемся с Вами в течении 15 минут!</p>
+            </div>
         </div>
     </main>
 
