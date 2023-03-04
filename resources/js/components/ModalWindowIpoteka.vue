@@ -157,7 +157,7 @@ export default {
     }
 
     .modal_h2 {
-        font-size: 48px;
+        font-size: 28px;
         font-weight: bold;
         line-height: 1;
         padding:  0 0 1em 0;
@@ -197,7 +197,7 @@ export default {
         }
 
         .modal_h2 {
-            font-size: 42px;
+            font-size: 24px;
         }
     }
 

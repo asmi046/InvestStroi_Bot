@@ -5,7 +5,7 @@
                 <div class="w-11/12">
                     <h2 class="pt-0">Семейная ипотека</h2>
 
-                    <p class="font-semibold" :class="{'text-sred': (payType === 'ipoteka'), 'text-sblue': (payType !== 'ipoteka')}">Ежемесячный платеж: {{ ipotekaMonthPay }} ₽ / мес.</p>
+                    <p class="font-semibold" :class="{'text-sred': (payType === 'ipoteka'), 'text-sblue': (payType !== 'ipoteka')}">Ежемесячный платеж: {{ Number(ipotekaMonthPay).toLocaleString('ru-RU') }} ₽ / мес.</p>
 
                 </div>
                 <div class="w-1/12 flex">
@@ -16,7 +16,7 @@
             <div class="w-full border border-cborder rounded-xl p-4 flex flex-wrap cursor-pointer" :class="{'border-sred': (payType === 'nal')}"  >
                 <div class="w-11/12">
                     <h2 class="pt-0">Оплата наличьными</h2>
-                    <p class="font-semibold" :class="{'text-sred': (payType === 'nal'), 'text-sblue': (payType !== 'nal')}"> со скидкой {{sales}} ₽
+                    <p class="font-semibold" :class="{'text-sred': (payType === 'nal'), 'text-sblue': (payType !== 'nal')}"> со скидкой {{ Number(sales).toLocaleString('ru-RU')}} ₽
                         <span class=" text-white px-2 py-[2px] bg-sblue rounded-md" :class="{'bg-sred': (payType === 'nal') }">5%</span>
                     </p>
                 </div>
@@ -64,9 +64,9 @@
                 let rez_str = "";
 
                 if (this.payType == "nal")
-                    rez_str = "Оплата наличными со скидкой: " + this.sales + "₽"
+                    rez_str = "Оплата наличными со скидкой: " + Number(this.sales).toLocaleString('ru-RU') + " ₽"
                 else
-                    rez_str = "Симейная ипотека, платеж: " + this.ipotekaMonthPay + "₽"
+                    rez_str = "Симейная ипотека, платеж: " + Number(this.ipotekaMonthPay).toLocaleString('ru-RU') + " ₽"
                 return rez_str;
             }
 
