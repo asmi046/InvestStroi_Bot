@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title')->comment('Залоловок');
             $table->string('addres')->comment('Адрес дома');
             $table->string('flors')->comment('Колличество этажей');
+            $table->string('img')->comment('Изображение');
 
         });
     }

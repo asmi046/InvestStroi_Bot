@@ -45,11 +45,12 @@ module.exports = {
         colors: {
         'sred': '#C10010',
         'sblue': '#003C8C',
-        'cborder': '#A0A0A0',
-        'cfill': '#F2F2F2'
+        'cborder': '#ced1d7',
+        'cfill': '#f1f2f4'
         },
 
         fontSize: {
+            midi: ['12px', '16px'],
             min: ['10px', '14px'],
         },
 

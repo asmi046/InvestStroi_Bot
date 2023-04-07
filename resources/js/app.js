@@ -13,6 +13,7 @@ import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import FlatSearch from './components/FlatSearch/FlatSearch.vue'
 import CustomSelect from './components/CustomSelect.vue'
 import LikeElement from './components/LikeElement.vue'
 import LikeCounter from './components/LikeCounter.vue'
@@ -56,6 +57,7 @@ const store = new createStore({
 
 const global_app = createApp({
     components:{
+        FlatSearch,
         CustomSelect,
         LikeElement,
         LikeCounter,

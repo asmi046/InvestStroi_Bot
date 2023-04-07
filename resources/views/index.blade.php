@@ -23,6 +23,7 @@
     </header>
 
     <main class="h-auto mb-20" id="global_app">
+        <flat-search></flat-search>
         <div class="container mx-auto px-4">
             <form class="flex flex-wrap"  action="">
                 <div class="flex-1">
