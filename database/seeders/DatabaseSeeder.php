@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             HomeSeeder::class,
-            KvartiraSeeder::class,
+            KvartiraSeederKursk::class,
+            KvartiraSeederOrel::class,
 
         ]);
     }
