@@ -56,8 +56,8 @@ class KvartiraSeederOrel extends Seeder
                         'flor' => intval($data[5]),
                         'rooms' => intval($rooms),
                         'plan_img' => Storage::url($data[0].".svg"),
-                        'home_1_img' => Storage::url("home_v_1.jpg"),
-                        'home_2_img' => Storage::url("home_v_2.jpg"),
+                        'home_1_img' => Storage::url("home_v_1_orel.jpg"),
+                        'home_2_img' => Storage::url("home_v_2_orel.jpg"),
                         'koridor_img' => "",
                         'home_id' => 1,
                     ];

@@ -3,7 +3,7 @@
         <div class="flex flex-col">
             <h2 class="text-sm">Выбор дома:</h2>
             <div class="flex justify-start">
-                <home-select></home-select>
+                <home-select :allhomes="all_homes"></home-select>
             </div>
         </div>
 
@@ -20,9 +20,9 @@
         <div class="flex flex-col">
             <h2 class="text-sm">Этаж:</h2>
             <div class="flex justify-start">
-                <input min="1" class="border  border-cborder px-2 py-1 rounded w-28" type="number" placeholder="От">
+                <input v-model="florot" min="1" class="border  border-cborder px-2 py-1 rounded w-28" type="number" placeholder="От">
                 <span class="mx-3 my-auto border border-b-cborder w-3"></span>
-                <input min="1" class="border border-cborder px-2 py-1 rounded w-28" type="number" placeholder="До">
+                <input v-model="flordo" min="1" class="border border-cborder px-2 py-1 rounded w-28" type="number" placeholder="До">
             </div>
         </div>
 
@@ -32,25 +32,26 @@
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import HomeSelectElrment from './HomeSelectElrment.vue'
 import HomeSelect from './HomeSelect.vue'
 export default {
     components: { HomeSelectElrment, HomeSelect },
-    setup(props) {
+    setup() {
+        const all_homes = ref({})
+        const florot = 1
+        const flordo = 10
 
         onMounted(()=>{
-            axios.get('/query', {
-                params: {
-                    home:"hommm",
-                    florot:1,
-                    florto:5
-                }
-            }) .then((response) => {
-                console.log(response)
+            axios.get('/get_start_param').then((response) => {
+                all_homes.value = response.data.all_home
             })
             .catch(error => console.log(error));
         })
+
+        return {
+            all_homes, florot, flordo
+        }
     }
 }
 </script>

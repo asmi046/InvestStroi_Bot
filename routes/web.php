@@ -24,6 +24,7 @@ Route::get('/', [IndexController::class, "show"])->name('home');
 Route::get('/home/{id}', [HomeController::class, "show"])->name('kvartira');
 
 Route::get('/query', [BaseController::class, "query"])->name('query');
+Route::get('/get_start_param', [BaseController::class, "get_start_param"])->name('get_start_param');
 
 Route::get('/favorites', [FavoriteController::class, "index"])->name("favorites");
 Route::get('/favorites/get', [FavoriteController::class, "get_all"])->name("favorites_get");
