@@ -23,8 +23,10 @@
     </header>
 
     <main class="h-auto mb-20" id="global_app">
-        <flat-search></flat-search>
+
         <div class="container mx-auto px-4">
+            <flat-search></flat-search>
+
             <form class="flex flex-wrap"  action="">
                 <div class="flex-1">
                     <custom-select :selected="'{{request()->input('home')}}'" :label="'Выберите дом'" :list='@json($all_home->toArray())' :field="'addres'" :name="'home'"></custom-select>

@@ -18,7 +18,6 @@ function favorites_to_page() {
 
             })
             .then((response) => {
-                console.log(response.data)
                 if (response.data.length == 0) return;
 
                     update_fav_counter(response.data.count)
@@ -45,7 +44,6 @@ function favorites_to_page() {
 
 function empty_fav_page() {
     let count_fav = document.querySelectorAll(".favorites-page .tovar_wrap.in-favorites").length
-    console.log(count_fav)
     let es = document.querySelector(".empty_favorites")
     if (count_fav ==  0 && es != null) es.style.display = "inline-block"
 }

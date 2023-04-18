@@ -14,7 +14,6 @@ export default {
 
     mounted:function () {
         this.elementLiked = this.liked
-        console.log(this.elementLiked)
 
     },
 

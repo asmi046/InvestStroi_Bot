@@ -1,10 +1,9 @@
 <template>
-    <div class="flex px-4 flex-col">
+    <div class="flex flex-col">
         <div class="flex flex-col">
             <h2 class="text-sm">Выбор дома:</h2>
             <div class="flex justify-start">
-                <home-select-elrment></home-select-elrment>
-                <home-select-elrment></home-select-elrment>
+                <home-select></home-select>
             </div>
         </div>
 
@@ -35,8 +34,9 @@
 <script>
 import { onMounted } from 'vue'
 import HomeSelectElrment from './HomeSelectElrment.vue'
+import HomeSelect from './HomeSelect.vue'
 export default {
-    components: { HomeSelectElrment },
+    components: { HomeSelectElrment, HomeSelect },
     setup(props) {
 
         onMounted(()=>{

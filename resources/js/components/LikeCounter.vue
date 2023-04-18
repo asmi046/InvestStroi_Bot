@@ -6,7 +6,6 @@
 export default {
 
     mounted() {
-        console.log("ddd");
         axios.get('/favorites/get', {}) .then((response) => {
             this.$store.dispatch('setCount', response.data.count);
         })
