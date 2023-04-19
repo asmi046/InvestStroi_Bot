@@ -34,8 +34,11 @@ class KvartiraSeederOrel extends Seeder
 
                 $type = "1 комната";
 
+                if ($data[1] == 'C') $type = "Студия";
                 if ($data[1] == 'С') $type = "Студия";
+                if ($data[1] == 'E2') $type = "2 комнаты (Евро)";
                 if ($data[1] == 'Е2') $type = "2 комнаты (Евро)";
+                if ($data[1] == 'E3') $type = "3 комнаты (Евро)";
                 if ($data[1] == 'Е3') $type = "3 комнаты (Евро)";
                 if ($data[1] == '2') $type = "2 комнаты";
                 if ($data[1] == '3') $type = "3 комнаты";
@@ -44,21 +47,21 @@ class KvartiraSeederOrel extends Seeder
                 $rooms = $data[4];
                 if ($rooms == 'С') $rooms = 1;
 
-                Storage::disk('public')->put($data[0].".svg", file_get_contents(public_path('planes/orel/'.$data[0].'.svg')), 'public');
+                Storage::disk('public')->put("orel-krt-".$data[0].".svg", file_get_contents(public_path('planes/orel/'.$data[0].'.svg')), 'public');
 
                 $main_data[] =
                     [
                         'type' => $type,
                         'number' => floatval($data[0]),
-                        'price' => floatval(str_replace(" ", "",trim($data[6]))),
-                        'price_metr' => floatval(str_replace(" ", "",trim($data[7]))),
+                        'price' => floatval(str_replace([" ",".",","], "",trim($data[6]))),
+                        'price_metr' => floatval(str_replace([" ",".",","], "",trim($data[7]))),
                         'view' => iconv("windows-1251", "utf-8", $data[8]),
                         'podezd' => iconv("windows-1251", "utf-8", $data[9]),
                         'area' => floatval($data[2]),
                         'area_live' => floatval($data[3]),
                         'flor' => intval($data[5]),
                         'rooms' => intval($rooms),
-                        'plan_img' => Storage::url($data[0].".svg"),
+                        'plan_img' => Storage::url("orel-krt-".$data[0].".svg"),
                         'home_1_img' => Storage::url("home_v_1_orel.jpg"),
                         'home_2_img' => Storage::url("home_v_2_orel.jpg"),
                         'koridor_img' => "",

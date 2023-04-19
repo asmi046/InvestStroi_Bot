@@ -10,7 +10,7 @@
     <p>Этаж {{item.flor}}</p>
     <p>Цена: <strong>{{item.price}} р</strong> </p>
     <div class="w-full flex flex-wrap pt-2 mt-auto">
-        <a  class="bg-sred text-white text-center px-5 py-2 rounded-lg text-xs ssm:text-xs xl:text-sm"  href="'/home/'+item.id">Подробнее</a>
+        <a  class="bg-sred text-white text-center px-5 py-2 rounded-lg text-xs ssm:text-xs xl:text-sm"  :href="'/home/'+item.id">Подробнее</a>
         <like-element :elemid="item.id"></like-element>
     </div>
 </div>

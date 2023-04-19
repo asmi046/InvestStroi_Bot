@@ -28,7 +28,7 @@
         </div>
 
         <div v-if="flat_load" class="flex flex-col justify-center">
-            <img class="mx-auto mt-5 w-14" src="/img/icons/loader.svg" alt="">
+            <img class="mx-auto mt-5 w-14" :src="'/img/icons/loader.svg'" alt="">
             <p class="mx-auto mt-5">Загружаем квартиры...</p>
         </div>
         <div v-else class="flex flex-wrap justify-between mt-4">
