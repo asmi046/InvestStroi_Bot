@@ -24,18 +24,20 @@ class HomeSeeder extends Seeder
 
         $main_data = [
             [
-                'title' => 'г. Курск, Энгельса 142а',
-                'addres' => 'г. Курск, Энгельса 142а',
-                'flors'=> 10,
-                'img' => Storage::url("engelsa.webp")
-            ],
-
-            [
                 'title' => 'г. Орел, КРТ Наугорское шоссе',
                 'addres' => 'г. Орел, КРТ Наугорское шоссе',
                 'flors'=> 10,
                 'img' => Storage::url("orel.webp")
             ],
+
+            [
+                'title' => 'г. Курск, Энгельса 142а',
+                'addres' => 'г. Курск, Энгельса 142а',
+                'flors'=> 10,
+                'img' => Storage::url("engelsa.webp")
+            ]
+
+
         ];
 
         DB::table("homes")->insert($main_data);

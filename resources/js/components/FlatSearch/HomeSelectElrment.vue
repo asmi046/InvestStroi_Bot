@@ -1,44 +1,36 @@
 <template>
-
-        <div @click.prevent="selectHome" class="w-32 border border-cfill p-2 mr-2 rounded-md  hover:border-sred" :class="{'border-sred':(sel == name)}">
-             <img class="rounded-md" src="img/home_select/engelsa.webp" alt="">
+        <div @click.prevent="selectHome" class="w-32 border border-cfill p-2 mr-2 rounded-md cursor-pointer hover:border-sblue hover:bg-sblue hover:text-white " :class="{'border-sblue bg-sblue text-white':(sel == item.id)}">
+             <img class="rounded-md w-full border border-white" :src="item.img" alt="">
 
             <p class="mt-2 text-midi text-center">
-                {{name}}
+                {{item.title}}
             </p>
         </div>
 </template>
 
 <script>
-import { watch, ref, toRefs } from 'vue'
+import { toRefs } from 'vue'
 export default {
 
     emits:['selectHome'],
 
     props: {
-        name: String,
-        sel: String
+        item: Object,
+        sel: Number
     },
 
     setup(props, context) {
 
-        const name = props.name
+        const item = props.item
         const {sel} = toRefs(props)
 
-        console.log(sel)
 
         const selectHome = () => {
-            context.emit('selectHome', name)
+            context.emit('selectHome', item.id)
         }
 
-        watch(sel, (newValue, oldValue) => {
-            console.log(newValue)
-            console.log(oldValue)
-
-        })
-
         return{
-            name,
+            item,
             sel,
             selectHome
         }

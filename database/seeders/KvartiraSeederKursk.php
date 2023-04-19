@@ -37,6 +37,9 @@ class KvartiraSeederKursk extends Seeder
                 if ($data[1] == 'C') $type = "Студия";
                 if ($data[1] == 'E2') $type = "2 комнаты (Евро)";
                 if ($data[1] == 'E3') $type = "3 комнаты (Евро)";
+                if ($data[1] == '2') $type = "2 комнаты";
+                if ($data[1] == '3') $type = "3 комнаты";
+                if ($data[1] == '1') $type = "1 комната";
 
                 $rooms = $data[4];
                 if ($rooms == 'С') $rooms = 1;

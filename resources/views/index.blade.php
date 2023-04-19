@@ -27,7 +27,7 @@
         <div class="container mx-auto px-4">
             <flat-search></flat-search>
 
-            <form class="flex flex-wrap"  action="">
+            {{-- <form class="flex flex-wrap"  action="">
                 <div class="flex-1">
                     <custom-select :selected="'{{request()->input('home')}}'" :label="'Выберите дом'" :list='@json($all_home->toArray())' :field="'addres'" :name="'home'"></custom-select>
                     <custom-select :selected="'{{request()->input('kvartira')}}'" :label="'Количество комнат'" :list='@json($kvtype->toArray())' :field="'type'" :name="'kvartira'"></custom-select>
@@ -49,7 +49,7 @@
                 @endforeach
 
 
-            </div>
+            </div> --}}
         </div>
   </main>
 

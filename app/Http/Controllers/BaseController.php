@@ -26,11 +26,20 @@ class BaseController extends Controller
 
 
     public function query(Request $request) {
-        $all_home = Home::all();
-        $all_flat = Kvartira::all();
 
-        $home = $request->get("home");
 
-        return ["test" => $home, "all_home" => $all_home, "flats" => $all_flat];
+        $rooms = ($request->get("rooms") !== "Все")?$request->get("rooms"):"%";
+        $selectedhome = ($request->get("selectedhome") !== "0")?$request->get("selectedhome"):"%";
+        $florot = $request->get("florot");
+        $flordo = $request->get("flordo");
+
+        $result = Kvartira::with("home_info")
+            ->where("type", "LIKE", $rooms)
+            ->where('home_id', "LIKE", $selectedhome)
+            ->where("flor", ">=", $florot)
+            ->where("flor", "<=", $flordo)
+            ->get();
+
+        return ["test" => $rooms, "count" => count($result), "results" => $result];
     }
 }

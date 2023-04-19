@@ -1,35 +1,38 @@
 <template>
-  <home-select-elrment @selectHome="chengeSelectHome" v-for="(item, index) in homes" :key="index" :name="item.title" :sel="sel"></home-select-elrment>
+    <div class="flex justify-start" :value="modelValue">
+        <home-select-elrment @selectHome="chengeSelectHome" :item="{id:0, title:'Все дома', img:'img/allhome.svg'}" :sel="sel"></home-select-elrment>
+        <home-select-elrment @selectHome="chengeSelectHome" v-for="(item, index) in homes" :key="index" :item="item" :sel="sel"></home-select-elrment>
+    </div>
 </template>
 
 <script>
-import { ref, toRefs } from 'vue'
+import { toRefs } from 'vue'
 import HomeSelectElrment from './HomeSelectElrment.vue'
 export default {
+
+    emits: ['update:modelValue'],
+
   components: { HomeSelectElrment },
 
   props: {
-    allhomes:Object
-
+    allhomes:Object,
+    modelValue:Number
   },
 
   setup(props, context) {
-    const homes = toRefs(props.allhomes)
-    console.log(homes)
-    // const homes = ['г. Курск, Энгельса 142а', 'г. Орел, КРТ Наугорское шоссе']
 
-    const sel = ref("г. Орел, КРТ Наугорское шоссе")
-
+    const {allhomes} = toRefs(props)
+    const {modelValue} = toRefs(props)
 
     const chengeSelectHome = home => {
-        sel.value = home
-        console.log(sel)
+        // modelValue.value = home
+        context.emit('update:modelValue', home)
     }
 
 
     return {
-        homes,
-        sel,
+        homes:allhomes,
+        sel:modelValue,
         chengeSelectHome
     }
   }
