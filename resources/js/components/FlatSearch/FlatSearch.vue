@@ -77,6 +77,11 @@ export default {
                 searchResult.value = response.data.results
                 flat_count.value = response.data.count
                 flat_load.value = false
+
+                localStorage.setItem('rooms', rooms.value)
+                localStorage.setItem('selectedHome', selectedHome.value)
+                localStorage.setItem('florot', florot.value)
+                localStorage.setItem('flordo', flordo.value)
             })
             .catch(error => console.log(error));
         }
@@ -86,6 +91,10 @@ export default {
                 all_homes.value = response.data.all_home
                 all_rooms.value = response.data.flats
 
+                rooms.value = (localStorage.getItem('rooms') !=null)?localStorage.getItem('rooms'):"Все"
+                selectedHome.value = (localStorage.getItem('selectedHome')!=null)?Number(localStorage.getItem('selectedHome')):0
+                florot.value = (localStorage.getItem('florot')!=null)?Number(localStorage.getItem('florot')):1
+                flordo.value = (localStorage.getItem('flordo')!=null)?Number(localStorage.getItem('flordo')):10
             })
             .catch(error => console.log(error));
         }

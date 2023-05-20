@@ -20,8 +20,8 @@ class KvartiraSeederOrel extends Seeder
     public function run()
     {
 
-        Storage::disk('public')->put("home_v_1.jpg", file_get_contents(public_path('facer/home_v_1_orel.jpg')), 'public');
-        Storage::disk('public')->put("home_v_2.jpg", file_get_contents(public_path('facer/home_v_2_orel.jpg')), 'public');
+        Storage::disk('public')->put("home_v_1_orel.jpg", file_get_contents(public_path('facer/home_v_1_orel.jpg')), 'public');
+        Storage::disk('public')->put("home_v_2_orel.jpg", file_get_contents(public_path('facer/home_v_2_orel.jpg')), 'public');
 
         $files = base_path() . '/public/base/orel.csv';
 

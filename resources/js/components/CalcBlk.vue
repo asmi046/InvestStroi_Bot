@@ -1,7 +1,7 @@
 <template>
         <modal-window-ipoteka rout="/send_consult" redirect="/thencs" hesh="showModalIpoteka" :title="'Бронирование квартиры: №' + kvartirainfo" :subtitle="ipotekaString" ></modal-window-ipoteka>
 
-            <div class="w-full border border-cborder rounded-xl p-4 flex flex-wrap my-2 cursor-pointer" :class="{'border-sred': (payType === 'ipoteka')}">
+            <div @click.prevent="chengePayType('ipoteka')" class="w-full border border-cborder rounded-xl p-4 flex flex-wrap my-2 cursor-pointer" :class="{'border-sred': (payType === 'ipoteka')}">
                 <div class="w-11/12">
                     <h2 class="pt-0">Семейная ипотека</h2>
 
@@ -9,11 +9,11 @@
 
                 </div>
                 <div class="w-1/12 flex">
-                    <check-box @click="chengePayType('ipoteka')" :active="payType == 'ipoteka'"></check-box>
+                    <check-box  :active="payType == 'ipoteka'"></check-box>
                 </div>
             </div>
 
-            <div class="w-full border border-cborder rounded-xl p-4 flex flex-wrap cursor-pointer" :class="{'border-sred': (payType === 'nal')}"  >
+            <div @click.prevent="chengePayType('nal')" class="w-full border border-cborder rounded-xl p-4 flex flex-wrap cursor-pointer" :class="{'border-sred': (payType === 'nal')}"  >
                 <div class="w-11/12">
                     <h2 class="pt-0">Оплата наличьными</h2>
                     <p class="font-semibold" :class="{'text-sred': (payType === 'nal'), 'text-sblue': (payType !== 'nal')}"> со скидкой {{ Number(sales).toLocaleString('ru-RU')}} ₽
@@ -21,9 +21,10 @@
                     </p>
                 </div>
                 <div class="w-1/12 flex">
-                    <check-box @click="chengePayType('nal')" :active="payType === 'nal'"></check-box>
+                    <check-box  :active="payType === 'nal'"></check-box>
                 </div>
             </div>
+
             <div class="w-full mt-3">
                 <a href="#showModalIpoteka" class="bg-sred text-white text-center px-5 py-2 rounded-lg text-xs ssm:text-xs xl:text-sm w-full block">Забронировать</a>
             </div>
