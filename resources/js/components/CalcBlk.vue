@@ -25,9 +25,9 @@
                 </div>
             </div>
 
-            <div class="w-full mt-3">
+            <!-- <div class="w-full mt-3">
                 <a href="#showModalIpoteka" class="bg-sred text-white text-center px-5 py-2 rounded-lg text-xs ssm:text-xs xl:text-sm w-full block">Забронировать</a>
-            </div>
+            </div> -->
 </template>
 
 <script>
