@@ -15,7 +15,7 @@
 
             <div @click.prevent="chengePayType('nal')" class="w-full border border-cborder rounded-xl p-4 flex flex-wrap cursor-pointer" :class="{'border-sred': (payType === 'nal')}"  >
                 <div class="w-11/12">
-                    <h2 class="pt-0">Оплата наличьными</h2>
+                    <h2 class="pt-0">Полная оплата (Эскроу-счет)</h2>
                     <p class="font-semibold" :class="{'text-sred': (payType === 'nal'), 'text-sblue': (payType !== 'nal')}"> со скидкой {{ Number(sales).toLocaleString('ru-RU')}} ₽
                         <span class=" text-white px-2 py-[2px] bg-sblue rounded-md" :class="{'bg-sred': (payType === 'nal') }">5%</span>
                     </p>
