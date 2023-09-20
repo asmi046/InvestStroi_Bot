@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <calc-blk :homeprice="{{$info->price}}" :kvartirainfo="'{{$info->number.', '.$info->type.' '.$info->area.'м²'}}'"></calc-blk>
+            {{-- <calc-blk :homeprice="{{$info->price}}" :kvartirainfo="'{{$info->number.', '.$info->type.' '.$info->area.'м²'}}'"></calc-blk> --}}
 
             <div class="w-full py-4 bg-cfill rounded-xl px-5 my-3 flex flex-col">
                 <x-param-blk :name="'Тип '" :value="$info->type"></x-param-blk>
